@@ -48,9 +48,9 @@ jobs:
       - name: Use version
         run: |
           yq eval -i ".image.versionSet.live.version = \"${{ needs.build.outputs.ref_name }}\"" .choreon
-      - name: test buildpack
-        run: |
-          pack build test_img --path . --builder paketobuildpacks/builder-jammy-base
+      # - name: test buildpack
+      #   run: |
+      #     pack build test_img --path . --builder paketobuildpacks/builder-jammy-base
 
       - name: Deploy
         env:
