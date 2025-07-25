@@ -18,6 +18,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - id: setup-tools
+        uses: buildpacks/github-actions/setup-tools@v5.1.0
+      - id: setup-pack
+        uses: buildpacks/github-actions/setup-pack@v5.1.0
 
       - name: Extract version
         id: extract_ref
